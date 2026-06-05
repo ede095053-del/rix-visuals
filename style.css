@@ -985,6 +985,21 @@ body.light .marquee-wrap { background: var(--bg3); border-color: var(--border); 
   border-radius: 10px;
 }
 
+/* Remove black background from logos like Kabba */
+.client-card img.client-logo[src*="kabba"] {
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+body.light .client-card img.client-logo[src*="kabba"] {
+  mix-blend-mode: multiply;
+}
+/* For dark mode invert the dark-bg logos */
+body:not(.light) .client-card img.client-logo[src*="kabba"],
+body:not(.light) .client-card img.client-logo[src*="mogesu"] {
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: normal;
+}
+
 /* tcard author link */
 .tcard-author a { color: var(--muted); font-size: 0.78rem; transition: color 0.2s; }
 .tcard-author a:hover { color: var(--standard); }
