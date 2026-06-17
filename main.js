@@ -140,13 +140,13 @@ form.addEventListener('submit', async (e) => {
   const message = document.getElementById('message').value.trim();
 
   const text = [
-    `🔔 *New Message – RIX VISUALS Website*`,
+    `🔔 New Message – RIX VISUALS Website`,
     ``,
-    `👤 *Name:* ${name}`,
-    `📧 *Email:* ${email}`,
-    `📞 *Phone:* ${phone || 'Not provided'}`,
-    `📦 *Package:* ${pkg || 'Not selected'}`,
-    `💬 *Message:*\n${message || 'No message'}`,
+    `👤 Name: ${name}`,
+    `📧 Email: ${email}`,
+    `📞 Phone: ${phone || 'Not provided'}`,
+    `📦 Package: ${pkg || 'Not selected'}`,
+    `💬 Message: ${message || 'No message'}`,
   ].join('\n');
 
   try {
@@ -156,7 +156,6 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify({
         chat_id: TG_CHAT_ID,
         text,
-        parse_mode: 'Markdown'
       })
     });
 
